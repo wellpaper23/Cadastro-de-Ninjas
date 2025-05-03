@@ -2,10 +2,15 @@ package dev.java10x.cadastrodeninjas.Missoes;
 
 import dev.java10x.cadastrodeninjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
-
+@Data
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
 @Table(name = "tb_missoes")
 public class MissoesModel {
     @Id
@@ -18,30 +23,6 @@ public class MissoesModel {
     private List<NinjaModel> ninjas;
 
 //construtores
-    public MissoesModel() {
-    }
-    public MissoesModel(String nome, String dificuldade) {
-        this.nome = nome;
-        this.dificuldade = dificuldade;
-    }
-//getters e setters
-    public String getDificuldade() {
-        return dificuldade;
-    }
-    public void setDificuldade(String dificuldade) {
-        this.dificuldade = dificuldade;
-    }
-
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public List<NinjaModel> getNinjas() {
-        return ninjas;
-    }
     public void addNinja(NinjaModel Ninja) {
         this.ninjas.add(Ninja);
     }
