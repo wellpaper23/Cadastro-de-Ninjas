@@ -1,15 +1,32 @@
 package dev.java10x.cadastrodeninjas.Missoes;
 
+import dev.java10x.cadastrodeninjas.Ninjas.NinjaModel;
+import org.hibernate.query.Page;
 import org.springframework.data.jpa.support.PageableUtils;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/missoes")
 public class MissoesController {
+
+    MissoesService missoesService;
+    MissoesController(MissoesService missoesService) {
+        this.missoesService = missoesService;
+    }
+
+
     //GET-- mandar uma Requisição para Listar as missões
     @GetMapping("/listar")
-    public String listarMissoes() {
-        return "Lista de missoes";
+    public List<MissoesModel> listarMissoes() {
+
+        return missoesService.listarTodasAsMissoes();
+    }
+    //Listar Missao por ID
+    @GetMapping("/listarid/{id}")
+    public List<MissoesModel> listarMissoesPorID(@PathVariable int id) {
+        return missoesService.buscarPorId(id);
     }
 
     //POST-- Mandar requisiçao para criar uma missão
