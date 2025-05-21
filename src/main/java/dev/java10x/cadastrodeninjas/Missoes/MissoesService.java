@@ -3,6 +3,7 @@ package dev.java10x.cadastrodeninjas.Missoes;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class MissoesService {
@@ -22,8 +23,9 @@ public class MissoesService {
     //deletar missões
 
     //exibir missão por id
-    public List<MissoesModel> buscarPorId(int id) {
-        return missoesRepository.findAllById(id);
+    public MissoesModel buscarPorId(Long id) {
+        Optional<MissoesModel> missaoPorId = missoesRepository.findById(id);
+        return missaoPorId.orElse(null);
     }
 
     //criar missão
