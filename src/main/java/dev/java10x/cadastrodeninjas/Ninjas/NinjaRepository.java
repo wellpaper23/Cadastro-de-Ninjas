@@ -5,5 +5,4 @@ import java.util.List;
 
 public interface NinjaRepository extends JpaRepository<NinjaModel,Long> {
 
-    List<NinjaModel> findAllById(Integer id);
 }

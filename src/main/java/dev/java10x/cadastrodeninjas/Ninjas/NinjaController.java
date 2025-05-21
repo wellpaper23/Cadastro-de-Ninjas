@@ -28,8 +28,8 @@ public class NinjaController {
         return "Ninja criado com sucesso";
     }
 
-    @GetMapping("/listarid/{id}")
-    public List<NinjaModel> listarNinjaPorId(@PathVariable int id){
+    @GetMapping("/listar/{id}")
+    public NinjaModel listarNinjaPorId(@PathVariable Long id){
         return ninjaService.buscarNinja(id);
     }
 
