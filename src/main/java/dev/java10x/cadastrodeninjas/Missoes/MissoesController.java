@@ -1,6 +1,7 @@
 package dev.java10x.cadastrodeninjas.Missoes;
 
 import dev.java10x.cadastrodeninjas.Ninjas.NinjaModel;
+import dev.java10x.cadastrodeninjas.Ninjas.NinjaService;
 import org.hibernate.query.Page;
 import org.springframework.data.jpa.support.PageableUtils;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,7 @@ public class MissoesController {
     MissoesService missoesService;
     MissoesController(MissoesService missoesService) {
         this.missoesService = missoesService;
+
     }
 
 
@@ -42,8 +44,8 @@ public class MissoesController {
     }
 
     //DELETE-- Mandar uma requisição para deletar uma missão
-    @DeleteMapping("/deletar")
-    public String deletarMissoes(){
-        return "Deletado com sucesso!";
+    @DeleteMapping("/deletar/{id}")
+    public void deletarMissoesPorId(@PathVariable Long id) {
+        missoesService.deletarMissaoPorId(id);
     }
 }

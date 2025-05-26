@@ -24,12 +24,14 @@ public class MissoesService {
     }
     //alterar missões
 
-    //deletar missões
 
     //exibir missão por id
     public MissoesModel buscarPorId(Long id) {
         Optional<MissoesModel> missaoPorId = missoesRepository.findById(id);
         return missaoPorId.orElse(null);
     }
-
+    //deletar missões
+    public void deletarMissaoPorId(Long id) {
+        missoesRepository.deleteById(id);
+    }
 }
