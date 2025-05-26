@@ -1,6 +1,7 @@
 package dev.java10x.cadastrodeninjas.Missoes;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +18,10 @@ public class MissoesService {
     public List<MissoesModel> listarTodasAsMissoes() {
         return missoesRepository.findAll();
     }
-
+    // criar missao
+    public MissoesModel criarMissao(MissoesModel missao) {
+        return missoesRepository.save(missao);
+    }
     //alterar missões
 
     //deletar missões
@@ -27,8 +31,5 @@ public class MissoesService {
         Optional<MissoesModel> missaoPorId = missoesRepository.findById(id);
         return missaoPorId.orElse(null);
     }
-
-    //criar missão
-
 
 }
