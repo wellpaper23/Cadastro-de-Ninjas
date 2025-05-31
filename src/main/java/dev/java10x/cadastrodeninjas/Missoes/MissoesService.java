@@ -23,7 +23,12 @@ public class MissoesService {
         return missoesRepository.save(missao);
     }
     //alterar missões
-
+    public MissoesModel atualizarMissao(Long id, MissoesModel missao) {
+        if (missoesRepository.existsById(id)) {
+            return missoesRepository.save(missao);
+        }
+    return null;
+    }
 
     //exibir missão por id
     public MissoesModel buscarPorId(Long id) {
