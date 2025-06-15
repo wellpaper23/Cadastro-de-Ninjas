@@ -9,11 +9,12 @@ import java.util.List;
 @RequestMapping("/ninja")
 public class NinjaController {
 
+    private NinjaService ninjaService;
+
     public NinjaController(NinjaService ninjaService) {
         this.ninjaService = ninjaService;
     }
 
-    private NinjaService ninjaService;
 
 
 
@@ -29,17 +30,17 @@ public class NinjaController {
     }
 
     @GetMapping("/listar/{id}")
-    public NinjaModel listarNinjaPorId(@PathVariable Long id){
+    public NinjaDTO listarNinjaPorId(@PathVariable Long id){
         return ninjaService.buscarNinja(id);
     }
 
     @GetMapping("/listar")
-    public List<NinjaModel> listarNinja(){
+    public List<NinjaDTO> listarNinja(){
         return ninjaService.listarNinjas();
     }
 
     @PutMapping("/alterar/{id}/")
-    public NinjaModel editarNinja(@PathVariable Long id, @RequestBody NinjaModel ninjaAtualizado){
+    public NinjaDTO editarNinja(@PathVariable Long id, @RequestBody NinjaDTO ninjaAtualizado){
         return ninjaService.atualizarNinja(id,ninjaAtualizado);
     }
 
