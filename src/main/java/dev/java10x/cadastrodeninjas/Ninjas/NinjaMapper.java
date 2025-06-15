@@ -1,7 +1,9 @@
 package dev.java10x.cadastrodeninjas.Ninjas;
 
 import dev.java10x.cadastrodeninjas.Missoes.MissoesModel;
+import org.springframework.stereotype.Component;
 
+@Component
 public class NinjaMapper {
     public NinjaModel map(NinjaDTO ninjaDTO) {
         NinjaModel ninjaModel = new NinjaModel();
