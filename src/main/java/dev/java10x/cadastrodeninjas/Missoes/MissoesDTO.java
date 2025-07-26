@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 @Data
 @AllArgsConstructor
@@ -20,4 +21,7 @@ public class MissoesDTO {
     private String dificuldade;
     private List<NinjaModel> ninjas;
 
+    public void setListaDeNinjas(List<NinjaModel> ninjas) {
+        this.ninjas = ninjas;
+    }
 }

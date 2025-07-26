@@ -14,6 +14,6 @@ public class NinjaDTO {
     private String email;
     private int idade;
     private String rank;
-    private MissoesModel missoes;
+    private MissoesModel missao;
 
 }

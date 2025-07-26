@@ -12,13 +12,6 @@ public class MissoesService {
     private MissoesRepository missoesRepository;
     private MissoesMapper  missoesMapper;
 
-    public MissoesService() {
-    }
-
-    public MissoesService(MissoesRepository MissoesRepository) {
-        this.missoesRepository = MissoesRepository;
-    }
-
     public MissoesService(MissoesMapper missoesMapper, MissoesRepository missoesRepository) {
         this.missoesMapper = missoesMapper;
         this.missoesRepository = missoesRepository;
