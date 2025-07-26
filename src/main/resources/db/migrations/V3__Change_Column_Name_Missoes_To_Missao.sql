@@ -1,0 +1,1 @@
+ALTER TABLE TB_CADASTRO RENAME COLUMN missoes_id TO missao_id;
