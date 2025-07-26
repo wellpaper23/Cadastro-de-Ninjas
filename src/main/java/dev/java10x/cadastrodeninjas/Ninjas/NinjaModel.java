@@ -1,4 +1,5 @@
 package dev.java10x.cadastrodeninjas.Ninjas;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.cadastrodeninjas.Missoes.MissoesModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -22,6 +23,7 @@ public class NinjaModel {
 
     @ManyToOne
     @JoinColumn(name = "missoes_ID")
-    private MissoesModel missoes;
+    @JsonIgnore
+    private MissoesModel missao;
 
 }
