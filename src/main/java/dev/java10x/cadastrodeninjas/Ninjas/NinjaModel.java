@@ -22,8 +22,7 @@ public class NinjaModel {
     private String rank;
 
     @ManyToOne
-    @JoinColumn(name = "missoes_ID")
-    @JsonIgnore
+    @JoinColumn(name = "missao_ID")
     private MissoesModel missao;
 
 }
